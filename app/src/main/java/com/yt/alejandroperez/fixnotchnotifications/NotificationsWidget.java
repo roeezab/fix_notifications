@@ -95,7 +95,7 @@ public class NotificationsWidget extends AppWidgetProvider {
         //StatusBarNotification[] newNotifications = new StatusBarNotification[notifications.length];
         ArrayList<StatusBarNotification> newNotifications = new ArrayList<StatusBarNotification>();
         for(int i=0; i<notifications.length; i++){
-            if(!listPackageName.contains(notifications[i].getPackageName())){
+            if(!listPackageName.contains(notifications[i].getPackageName()) && notifications[i].isClearable()){
                 listPackageName.add(notifications[i].getPackageName());
                 newNotifications.add(notifications[i]);
 
